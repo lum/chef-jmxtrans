@@ -16,32 +16,32 @@ default['jmxtrans']['default_queries'] = {
     {
       "result_alias" => "createEntities",
       "obj" => "ai.tempo.performance:type=webserver,group=createEntities",
-      "attr" => [ "AvgCallsPerSec", "AvgProcessTime" ]
+      "attr" => [ "AvgCallsPerMin", "AvgProcessTime" ]
     },
     {
       "result_alias" => "getEntities",
       "obj" => "ai.tempo.performance:type=webserver,group=getEntities",
-      "attr" => [ "AvgCallsPerSec", "AvgProcessTime" ]
+      "attr" => [ "AvgCallsPerMin", "AvgProcessTime" ]
     },
     {
       "result_alias" => "findRelatedResults",
       "obj" => "ai.tempo.performance:type=webserver,group=findRelatedResults",
-      "attr" => [ "AvgCallsPerSec", "AvgProcessTime" ]
+      "attr" => [ "AvgCallsPerMin", "AvgProcessTime" ]
     },
     {
       "result_alias" => "getEntityTimeStamps",
       "obj" => "ai.tempo.performance:type=webserver,group=getEntityTimeStamps",
-      "attr" => [ "AvgCallsPerSec", "AvgProcessTime" ]
+      "attr" => [ "AvgCallsPerMin", "AvgProcessTime" ]
     },
     {
       "result_alias" => "getMeetings",
       "obj" => "ai.tempo.performance:type=webserver,group=getMeetings",
-      "attr" => [ "AvgCallsPerSec", "AvgProcessTime" ]
+      "attr" => [ "AvgCallsPerMin", "AvgProcessTime" ]
     },
     {
       "result_alias" => "reprocessEntities",
       "obj" => "ai.tempo.performance:type=webserver,group=reprocessEntities",
-      "attr" => [ "AvgCallsPerSec", "AvgProcessTime" ]
+      "attr" => [ "AvgCallsPerMin", "AvgProcessTime" ]
     }
   ],
   'tempo-harvester' => [
@@ -409,4 +409,3 @@ default['jmxtrans']['default_queries'] = {
                }
               ]
 }
-
