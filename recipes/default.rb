@@ -3,6 +3,7 @@
 # Recipe:: default
 #
 # Copyright 2012, Bryan W. Berry
+# Copyright 2013, Steve Lum
 #
 # Apache 2.0 license
 #
@@ -17,13 +18,26 @@ end
 
 user node['jmxtrans']['user']
 
-# merge stock jvm queries w/ container specific ones into single array
-servers = node['jmxtrans']['servers']
+data = data_bag_item("jmxtrans", "jmxtrans")
+servers = data['jmxtrans']['servers']
 servers.each do |server|
-  server['queries'] = node['jmxtrans']['default_queries']['jvm']
+  server['queries'] = []
+  server['queries'] << node['jmxtrans']['default_queries']['jvm']
   case server['type']
   when 'tomcat'
     server['queries'] << node['jmxtrans']['default_queries']['tomcat']
+  when 'tempo-web-server'
+    server['queries'] << node['jmxtrans']['default_queries']['tempo-web-server']
+  when 'tempo-harvester'
+    server['queries'] << node['jmxtrans']['default_queries']['tempo-harvester']
+  when 'tempo-semantic'
+    server['queries'] << node['jmxtrans']['default_queries']['tempo-semantic']
+  when 'tempo-indexer'
+    server['queries'] << node['jmxtrans']['default_queries']['tempo-indexer']
+  when 'tempo-utility'
+    server['queries'] << node['jmxtrans']['default_queries']['tempo-utility']
+  when 'kafka'
+    server['queries'] << node['jmxtrans']['default_queries']['kafka']
   end
   server['queries'].flatten!
 end
