@@ -42,6 +42,16 @@ default['jmxtrans']['default_queries'] = {
       "result_alias" => "reprocessEntities",
       "obj" => "ai.tempo.performance:type=webserver,group=reprocessEntities",
       "attr" => [ "AvgCallsPerMin", "AvgProcessTime" ]
+    },
+    {
+      "result_alias" => "login",
+      "obj" => "ai.tempo.performance:type=webserver,group=login",
+      "attr" => [ "AvgCallsPerMin", "AvgProcessTime" ]
+    },
+    {
+      "result_alias" => "loginUserId",
+      "obj" => "ai.tempo.performance:type=webserver,group=loginUserId",
+      "attr" => [ "AvgCallsPerMin", "AvgProcessTime" ]
     }
   ],
   'tempo-harvester' => [
