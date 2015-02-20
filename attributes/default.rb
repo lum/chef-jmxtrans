@@ -178,6 +178,16 @@ default['jmxtrans']['default_queries'] = {
       "result_alias" => "utilities_pipeline",
       "obj" => "ai.tempo.performance:type=utilities,group=utilities_pipeline",
       "attr" => [ "ActiveThreadCount", "AvgProcessTime", "AvgQueueLatencyInSec", "ErrorCount", "FatalCount", "LastErrorTime", "LastMessageTime", "MessageCount", "ProcessingThreadCount", "RollingErrorCount", "SecondsOnQueue" ]
+    },
+    {
+      "result_alias" => "weekly_email_handler",
+      "obj" => "ai.tempo.performance:type=utilities,group=weekly_email_handler",
+      "attr" => [ "ActiveThreadCount", "NumberOfWeeklyUsersSent", "AvgFetchWeatherTime", "AvgFetchFollowupsTime", "AvgFetchServerCalendarTime", "AvgFetchNewsTime", "AvgFetchSelfNewsTime", "NumberOfMonthlyUsersSent", "AvgFetchBirthdayTime", "AvgProcessTime", "AvgQueueLatencyInSec", "ErrorCount", "FatalCount", "LastErrorTime", "LastMessageTime", "MessageCount", "ProcessingThreadCount", "RollingErrorCount", "SecondsOnQueue" ]
+    },
+    {
+      "result_alias" => "weekly_user_handler",
+      "obj" => "ai.tempo.performance:type=utilities,group=weekly_user_handler",
+      "attr" => [ "ActiveThreadCount", "AvgProcessTime", "AvgQueueLatencyInSec", "ErrorCount", "FatalCount", "LastErrorTime", "LastMessageTime", "MessageCount", "ProcessingThreadCount", "RollingErrorCount", "SecondsOnQueue" ]
     }
   ],
   'tempo-semantic' => [
